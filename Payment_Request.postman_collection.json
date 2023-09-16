@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "f3ba9bb3-bcc9-4497-8a7e-bcc32221d2de",
+		"name": "Payment_Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18172470"
+	},
+	"item": [
+		{
+			"name": "Create Client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Chandan\",\n    \"EmailAddress\": \"chandan.shukla@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/client",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/clients/68c76c91-79e3-497b-a8e7-c1f59f3f13d6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"68c76c91-79e3-497b-a8e7-c1f59f3f13d6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/clients/b4e56adc-de58-4c80-b131-01ccaf5cd773/money-requests",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"b4e56adc-de58-4c80-b131-01ccaf5cd773",
+						"money-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"expirationDate\": \"20/20/2024\",\n    \"amount\": \"100\",\n    \"requesteeId\" : \"b4e56adc-de58-4c80-b131-01ccaf5cd773\",\n    \"message\": \"Money for party\",\n    \"invoiceNumber\": \"sdhs983t4lknlksf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/clients/4fa8dd12-cd51-4150-bd77-33809bf54aa0/money-requests",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"4fa8dd12-cd51-4150-bd77-33809bf54aa0",
+						"money-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Requests By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/money-request/6df7620d-d67d-40da-850b-4d6a47234387",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"money-request",
+						"6df7620d-d67d-40da-850b-4d6a47234387"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Request Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"messageToRequester\": \"Done\",\n    \"Action\": \"accept\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/money-request/dd1b56d8-a086-411a-a7f0-29ae7ab4dadf",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"money-request",
+						"dd1b56d8-a086-411a-a7f0-29ae7ab4dadf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client By Email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client-header",
+						"value": "\"Chandan.shukla@gmail.com\"",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/client",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
